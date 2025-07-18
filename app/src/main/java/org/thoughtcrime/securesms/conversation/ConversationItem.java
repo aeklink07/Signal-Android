@@ -219,6 +219,7 @@ public final class ConversationItem extends RelativeLayout implements BindableCo
   private           TextView                   storyReactionLabel;
   private           View                       quotedIndicator;
   private           View                       scheduledIndicator;
+  private           org.thoughtcrime.securesms.conversation.ai.AiSummaryView aiSummaryView;
 
   private @NonNull       Set<MultiselectPart>                    batchSelected = new HashSet<>();
   private final @NonNull Outliner                                outliner      = new Outliner();
@@ -352,6 +353,9 @@ public final class ConversationItem extends RelativeLayout implements BindableCo
     this.quotedIndicator           = findViewById(R.id.quoted_indicator);
     this.paymentViewStub           = new Stub<>(findViewById(R.id.payment_view_stub));
     this.scheduledIndicator        = findViewById(R.id.scheduled_indicator);
+
+    // Initialize AI Summary View
+    this.aiSummaryView = findViewById(R.id.ai_summary_view);
 
     setOnClickListener(new ClickListener(null));
 
@@ -723,6 +727,11 @@ public final class ConversationItem extends RelativeLayout implements BindableCo
     bodyBubble.setVideoPlayerProjection(null);
     bodyBubble.setQuoteViewProjection(null);
 
+    // Reset AI Summary View
+    if (aiSummaryView != null) {
+      aiSummaryView.reset();
+    }
+
     requestManager = null;
   }
 
@@ -1078,6 +1087,15 @@ public final class ConversationItem extends RelativeLayout implements BindableCo
 
       bodyText.setText(StringUtil.trim(styledText));
       bodyText.setVisibility(View.VISIBLE);
+
+      // Initialize AI Summary View
+      if (aiSummaryView != null) {
+        String bodyTextString = StringUtil.trim(styledText).toString();
+        aiSummaryView.setMessageText(bodyTextString);
+        if (context instanceof androidx.lifecycle.LifecycleOwner) {
+          aiSummaryView.setLifecycleOwner((androidx.lifecycle.LifecycleOwner) context);
+        }
+      }
 
       if (conversationMessage.getBottomButton() != null) {
         callToActionStub.get().setVisibility(View.VISIBLE);

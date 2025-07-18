@@ -388,6 +388,17 @@ private fun AppSettingsContent(
           )
         }
 
+        item {
+          Rows.TextRow(
+            text = stringResource(R.string.ai_settings__title),
+            icon = painterResource(R.drawable.symbol_flash_auto_24),
+            onClick = {
+              callbacks.navigate(R.id.action_appSettingsFragment_to_aiSettingsFragment)
+            },
+            enabled = isRegisteredAndUpToDate
+          )
+        }
+
         if (state.showBackups) {
           item {
             Rows.TextRow(
