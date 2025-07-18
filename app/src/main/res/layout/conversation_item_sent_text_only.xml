@@ -64,6 +64,12 @@
             app:measureLastLine="true"
             tools:text="Mango pickle lorem ipsum" />
 
+        <!-- AI Summary View -->
+        <org.thoughtcrime.securesms.conversation.ai.AiSummaryView
+            android:id="@+id/ai_summary_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <org.thoughtcrime.securesms.components.ConversationItemFooter
             android:id="@+id/conversation_item_footer"
             android:layout_width="wrap_content"
