@@ -603,6 +603,9 @@ dependencies {
   implementation(libs.androidx.credentials)
   implementation(libs.androidx.credentials.compat)
 
+  // Gemini AI integration for message summarization
+  implementation("com.google.ai.client.generativeai:generativeai:0.2.2")
+
   "playImplementation"(project(":billing"))
   "nightlyImplementation"(project(":billing"))
 

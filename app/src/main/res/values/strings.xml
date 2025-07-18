@@ -8652,5 +8652,25 @@
         <item quantity="other">You haven’t completed a backup for %1$d days. Create a backup now.</item>
     </plurals>
 
+    <!-- AI Settings strings -->
+    <string name="ai_settings__title">AI Settings</string>
+    <string name="ai_settings__ai_summarization">AI Summarization</string>
+    <string name="ai_settings__description">Artificial Intelligence</string>
+    <string name="ai_settings__description_summary">Use Gemini AI to summarize long messages</string>
+    <string name="ai_settings__enable_ai_summary">Enable AI Summarization</string>
+    <string name="ai_settings__enable_ai_summary_description">Show AI summary button for messages longer than the minimum character count</string>
+    <string name="ai_settings__api_key">Gemini API Key</string>
+    <string name="ai_settings__api_key_configured">API key configured</string>
+    <string name="ai_settings__api_key_not_configured">Tap to configure API key</string>
+    <string name="ai_settings__api_key_dialog_message">Enter your Google AI Studio API key. This key will be stored locally on your device.</string>
+    <string name="ai_settings__model_selection">AI Model</string>
+    <string name="ai_settings__minimum_characters">Minimum Characters</string>
+    <string name="ai_settings__minimum_characters_summary">Show AI button for messages with at least %1$d characters</string>
+    <string name="ai_summary__button_description">Summarize with AI</string>
+    <string name="ai_summary__generating">Generating summary...</string>
+    <string name="ai_summary__error">Failed to generate summary</string>
+    <string name="ai_summary__error_no_api_key">Please configure your API key in settings</string>
+    <string name="ai_summary__error_network">Network error. Please try again.</string>
+
     <!-- EOF -->
 </resources>
